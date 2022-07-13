@@ -1,5 +1,5 @@
 #include <Python.h>
-#include "../shap/shap/cext/tree_shap.h"
+#include "../../shap/shap/cext/tree_shap.h"
 
 #include <cstddef>
 #include <queue>

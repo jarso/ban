@@ -73,7 +73,7 @@ foreach(bin_src ${bin_srcs})
     get_filename_component(bin_name ${bin_src} NAME_WE)
     message("adding binary" : ${bin_name})
     add_executable(${bin_name} ${bin_src})
-    target_link_libraries (${bin_name} ${LIBS} python3.6m)
+    target_link_libraries (${bin_name} ${LIBS} python3.10)
 
 endforeach()
 
