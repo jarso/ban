@@ -90,6 +90,7 @@ struct simple {
     }
     // actually add the feature f to the dp state
     dp.add_feature(coef(*x, missing_reach, iv, prob, f));
+    std::cout<< "beta[ " << "pre" << " ] = " << dp.aggr() << std::endl;
     if (v->is_leaf()) {
       // if v is a leaf, for each frature g from the current path
       for (auto g : current_features) {

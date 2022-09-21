@@ -2,6 +2,7 @@ import shap
 import xgboost as xgb
 import pandas as pd
 from sklearn import datasets
+# from shap.datasets import datasets
 from sklearn.model_selection import train_test_split
 from sklearn.preprocessing import StandardScaler
 from sklearn.impute import SimpleImputer
@@ -22,7 +23,8 @@ def get_boston(model_type):
     if model_type == 'DT':
         max_depth=10
         NAME=f'{NAME}_{max_depth}'
-        model = RandomForestRegressor(max_depth=max_depth, random_state=0, n_estimators=1)
+        # model = RandomForestRegressor(max_depth=max_depth, random_state=0, n_estimators=1)
+        model = RandomForestRegressor(max_depth=max_depth, random_state=0)
         model.fit(X, y)
     else:
         model = xgb.train({"learning_rate": 0.01, 'seed': 42}, xgb.DMatrix(X, label=y), 100)

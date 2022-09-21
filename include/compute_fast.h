@@ -88,6 +88,7 @@ struct fast {
     }
     res_type c = coef(*x, missing_reach, iv, prob, f);
     dp.add_feature(c);
+    std::cout<< "beta[ " << pre << " ] = " << dp.aggr() << std::endl;
     if (v->is_leaf()) {
       // the sum of dp's in the leaf is just the dp scaled by the leaf's weight
       G[pre] = dp;
